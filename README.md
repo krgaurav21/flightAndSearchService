@@ -1,4 +1,4 @@
-# welcome to Flight Service 
+# Welcome to Flight Service 
 
 ## Project Setup
     - clone the project on your local
@@ -15,8 +15,24 @@
                 "host": "127.0.0.1",
                 "dialect": "mysql"
             }
+
         ......
     
 
     - Once you have added your db config as mentioned above, go to the src folder from your terminal and execute `npx sequelize db:create`
+    and then execute 
+    `npx sequelize db:migrate`
+
+    .........
+
+
+    ## DB Design
+        - Airplane table
+        - Flights
+        -city
+        -Airport
+
+    - A flight belongs to an airplane but an airplane can have multiple flights.
+    - A city has many airports but one airport belongs to only one city.
+    - One airport can have many flights but one flight belongs to one airport.
 
