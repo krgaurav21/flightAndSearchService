@@ -47,7 +47,8 @@ class CityRepository{
 
     async getCity(cityId){
         try {
-            const city = await City.findByPk(cityId);
+            const city = await City.findByPk(cityId);   // findByPk-- means find by primary key ; 
+                                                        //you can learn more about different sequelize Model Querying.
             return city;
             
         } catch (error) {
