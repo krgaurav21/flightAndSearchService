@@ -1,13 +1,13 @@
-const {City} = require('../models/index');
+const {city} = require('../models/index');
 
 
 class CityRepository{
     async createCity({name}){
         try{
-            const city = await City.create({
+            const citi = await city.create({
                 name
             });
-            return city;
+            return citi;
 
         }catch(error){
             console.log("Something went wrong in the repository layer");
@@ -17,7 +17,7 @@ class CityRepository{
 
     async deleteCity(cityId){
         try{
-            await City.destroy({
+            await city.destroy({
                 where:{
                     id:cityId
                 }
@@ -32,13 +32,13 @@ class CityRepository{
 
     async updateCity(cityId,data){
         try {
-            const city = await City.update(data,{
+            const citi = await city.update(data,{
                 where:{
                     id:cityId
                 }
 
             });
-            return city;
+            return citi;
         } catch (error) {
             console.log("Something went wrong in the repository layer");
             throw {error};
@@ -47,9 +47,9 @@ class CityRepository{
 
     async getCity(cityId){
         try {
-            const city = await City.findByPk(cityId);   // findByPk-- means find by primary key ; 
+            const citi = await city.findByPk(cityId);   // findByPk-- means find by primary key ; 
                                                         //you can learn more about different sequelize Model Querying.
-            return city;
+            return citi;
             
         } catch (error) {
             console.log("Something went wrong in the repository layer");
